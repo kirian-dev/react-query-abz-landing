@@ -1,0 +1,85 @@
+.users-section {
+  padding-top: 140px;
+  padding-bottom: 140px;
+
+  background-color: $background-color;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
+
+  &__button {
+    margin-top: 50px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 20px;
+
+    @include onTablet {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-column-gap: 16px;
+      grid-row-gap: 16px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 29px;
+      grid-row-gap: 29px;
+    }
+  }
+}
+
+.users-card {
+  @include flexCenter;
+  flex-direction: column;
+  padding: $base-padding-size-card;
+
+  background-color: $color-white;
+  border-radius: 10px;
+
+  &__list {
+    margin: 0;
+
+    text-align: center;
+  }
+
+  &__image {
+    margin-bottom: 20px;
+
+    border-radius: 50%;
+  }
+
+  &__list-item {
+    max-width: 288px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:first-child {
+      margin-bottom: 20px;
+    }
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    @include onTablet {
+      max-width: 304px;
+    }
+
+    @include onDesktop {
+      max-width: 242px;
+    }
+  }
+
+  &__contact {
+    text-decoration: none;
+    color: inherit;
+  }
+}

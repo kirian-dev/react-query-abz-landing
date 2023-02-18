@@ -1,16 +1,22 @@
 .header {
-  @include flexBetween;
-  max-width: $max-width-content;
-  padding: 13px 16px;
-  margin: 0 auto;
-  background-color: $white-color;
+  width: 100vw;
+  background-color: $color-white;
 
-  @include onTablet {
-    padding: 13px 32px;
-  }
+  &__content {
+    @include flexBetween;
+    max-width: $max-width-content;
 
-  @include onDesktop {
-    padding: 13px 60px;
+    padding: 13px 16px;
+    width: 100%;
+    margin: 0 auto;
+
+    @include onTablet {
+      padding: 13px 32px;
+    }
+
+    @include onDesktop {
+      padding: 13px 60px;
+    }
   }
 
   &__buttons {

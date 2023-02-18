@@ -1,0 +1,42 @@
+.hero {
+  padding: 40px 0 71px;
+  background: 
+    url('@/assets/images/hero-section.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include onTablet {
+    padding-top: 89px;
+    padding-bottom: 88px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding-top: 164px;
+    padding-bottom: 163px;
+  }
+
+  @media screen and (min-width: 1170px) {
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 2560px) {
+    padding-top: 164px;
+    padding-bottom: 163px;
+  }
+
+  &__wrapper {
+    padding: 0 16px;
+    width: 100%;
+    @include flexCenter;
+    flex-direction: column;
+  }
+
+  &__text {
+    width: 328px;
+    padding: 21px 0 32px;
+    color: $color-white;
+    line-height: 26px;
+    text-align: center;
+  }
+}

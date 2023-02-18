@@ -2,8 +2,8 @@
 $primary-color: #f4e041;
 $secondary-color: #00bdd3;
 $background-color: #f8f8f8;
-$color-text: rgba(0, 0, 0, 0.87);
-$white-color: #ffff;
+$color-black: rgba(0, 0, 0, 0.87);
+$color-white: #ffff;
 $color-error: #cb3d40;
 
 // main-width
@@ -19,10 +19,13 @@ $button-border-radius: 80px;
 $button-hover-color: #ffe302;
 $button-disabled-color: #b4b4b4;
 
+//heading
+$h1-large-size: 40px;
+$h1-line-height: 40px;
+
 // input
 $input-border-color: #d0cfcf;
 $input-border-color-error: #cb3d40;
 
-// card
-$base-text-size: 16px;
+// users section
 $base-padding-size-card: 20px;
