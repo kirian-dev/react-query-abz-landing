@@ -1,0 +1,42 @@
+.button {
+  background-color: $primary-color;
+  border: none;
+  border-radius: $button-border-radius;
+  width: $button-width;
+  height: $button-height;
+
+  font-size: 16px;
+  line-height: 1.62;
+
+  color: $color-text;
+  text-decoration: none;
+
+  transition: background-color 300ms linear 0ms;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $button-hover-color;
+  }
+}
+
+// %button-users {
+//   padding: 4px 29px;
+// }
+
+// %button-signup {
+//   padding: 4px 22px 4px 23px;
+// }
+
+// %button-signup-disabled {
+//   padding: 4px 22px 4px 23px;
+//   background-color: $button-disabled-color;
+//   color: $white-color;
+
+//   &:hover {
+//     background-color: $button-disabled-color;
+//   }
+// }
+
+// %button-show-more {
+//   padding: 4px 18px 4px 19px;
+// }

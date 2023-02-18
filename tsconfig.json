@@ -25,9 +25,8 @@
       "@/services/*": ["services/*"],
       "@/lib/*": ["lib/*"],
       "@/types/*": ["types/*"],
-      "@/store/*": ["store/*"],
       "@/configs/*": ["configs/*"],
-      "@/features/*": ["features/*"]
+      "@/modules/*": ["modules/*"]
     }
   },
   "include": ["src", "**/*.ts", "**/*.tsx"],
