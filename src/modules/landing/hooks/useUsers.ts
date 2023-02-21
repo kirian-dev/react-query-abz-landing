@@ -1,37 +1,69 @@
-import { useQuery, useMutation } from 'react-query';
-import { UserService } from "../services/user.service";
-import { IUser } from '@/types/user.interface';
+import { useCallback, useMemo, useState } from 'react';
+import { useInfiniteQuery, useMutation, useQuery } from 'react-query';
+import { UserService } from '../services/user.service';
+import { ICreateUser } from '@/types/user.interface';
 
-export const useUsers = (page: string) => {
-  const {
-    data: users,
-    isLoading,
-    error,
-  } = useQuery(['users', page], () => UserService.getUsers(page));
+const initialPage = '1';
+
+export const useUsers = () => {
+  const queryData = useInfiniteQuery(
+    ['users', initialPage],
+    ({ pageParam = initialPage }) => UserService.getUsers(pageParam),
+    {
+      getNextPageParam: (lastPage) => lastPage && lastPage.links.next_url && lastPage.page + 1,
+      staleTime: Infinity,
+    }
+  );
+  const { data: users, isLoading, error, fetchNextPage, hasNextPage } = queryData;
+
+  const handleShowMore = useCallback(() => {
+    fetchNextPage();
+  }, [fetchNextPage]);
+
+  const showMoreButtonVisible = useMemo(() => {
+    return !isLoading && !error && hasNextPage;
+  }, [isLoading, error, hasNextPage]);
 
   const {
     mutate: createUser,
     isLoading: isCreating,
-    error: createError,
-  } = useMutation((data: IUser[]) => UserService.createUser('token', data));
-
-  const {
-    data: token,
-    isLoading: isTokenLoading,
-    error: tokenError,
-  } = useQuery('token', UserService.getToken);
+    error: createUserError,
+    isSuccess: createUserSuccess,
+  } = useMutation((data: ICreateUser) => UserService.createUser(data), {
+    onSuccess() {
+      queryData.refetch();
+    },
+  });
 
   const {
     data: positions,
     isLoading: isPositionLoading,
     error: positionError,
   } = useQuery('positions', UserService.getPositions);
-
-  return {
-    users,
-    createUser,
-    isLoading: isLoading || isCreating || isTokenLoading || isPositionLoading,
-    error: error || createError || tokenError || positionError,
-    positions,
-  };
+  return useMemo(
+    () => ({
+      users,
+      createUser,
+      isLoading: isLoading || isCreating || isPositionLoading,
+      error: error || createUserError || positionError,
+      positions,
+      handleShowMore,
+      showMoreButtonVisible,
+      createUserSuccess,
+    }),
+    [
+      users,
+      createUser,
+      isLoading,
+      isCreating,
+      isPositionLoading,
+      error,
+      createUserError,
+      positionError,
+      positions,
+      showMoreButtonVisible,
+      handleShowMore,
+      createUserSuccess,
+    ]
+  );
 };

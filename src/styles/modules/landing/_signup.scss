@@ -1,0 +1,105 @@
+.signup {
+  &__title {
+    color: $black-color;
+    padding-bottom: 50px;
+    margin: 0 auto;
+  }
+
+  &__button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__button {
+    margin-bottom: 100px;
+  }
+
+  &__success {
+    padding-bottom: 160px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+
+  &__success {
+    display: block;
+    margin: 50px auto;
+  }
+
+  &__title {
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  &__field {
+    width: 328px;
+
+    height: 54px;
+    border-radius: 4px;
+    padding-left: 16px;
+
+    @include onTablet {
+      width: 380px;
+    }
+
+    &__container {
+      margin-bottom: 50px;
+
+      &--mb {
+        margin-bottom: 43px;
+      }
+    }
+  }
+
+  &__radio-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__radio-list {
+    margin-bottom: 50px;
+    width: 328px;
+
+    @include onTablet {
+      width: 380px;
+    }
+
+    &-title {
+      margin-bottom: 11px;
+    }
+  }
+
+  &__radio__item {
+    margin-bottom: 7px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__meta {
+    position: absolute;
+    bottom: -18px;
+    left: 16px;
+    padding-top: 4px;
+    color: #7e7e7e;
+    font-size: 12px;
+    line-height: 14px;
+
+    &.error {
+      color: $error-color;
+    }
+  }
+
+  &__error {
+    color: $error-color;
+    font-size: 12px;
+    padding-top: 4px;
+    padding-left: 16px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

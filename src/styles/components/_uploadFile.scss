@@ -1,0 +1,61 @@
+.form {
+  &__file-wrapper {
+    display: block;
+    margin-bottom: 50px;
+    height: 54px;
+    width: 328px;
+
+    @include onTablet {
+    width: 380px;
+
+    }
+
+    input {
+      display: none;
+    }
+  }
+
+  &__file-custom {
+    position: relative;
+    display: flex;
+    height: 100%;
+    cursor: pointer;
+
+    &:hover .form__file-custom-upload {
+      background-color: #e8e8e8;
+    }
+
+    &-upload {
+      width: 83px;
+      padding: 0 15px;
+      border: 1px solid $black-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      transition: 0.2s;
+
+      &.error {
+        border: 2px solid $error-color;
+      }
+    }
+
+    &__name {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      border: 1px solid $input-border-color;
+      color: $input-border-color;
+      border-left: none;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      padding-left: 16px;
+
+      &.error {
+        border: 2px solid $error-color;
+        border-left: none;
+      }
+    }
+  }
+}

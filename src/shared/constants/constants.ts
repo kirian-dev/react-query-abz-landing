@@ -9,6 +9,7 @@ export const HERO_SUBHEADER = `What defines a good front-end developer is one th
 // users
 export const USERS_TITLE_GET = 'Working with GET request';
 export const USERS_TITLE_POST = 'Working with POST request';
+export const SUCCESS_TITLE = 'User successfully registered';
 export const RADIO_BUTTON_POSITION_TEXT = 'Select your position';
 export const UPLOAD_TEXT = 'Upload';
 export const BUTTON_SHOW_MORE = 'Show more';

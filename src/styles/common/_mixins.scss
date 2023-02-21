@@ -10,6 +10,12 @@
   }
 }
 
+@mixin onMaxWidth {
+  @media (min-width: 1170px) {
+    @content;
+  }
+}
+
 @mixin onLargeScreen {
   @media (min-width: 2560px) {
     @content;

@@ -35,8 +35,12 @@
   &__text {
     width: 328px;
     padding: 21px 0 32px;
-    color: $color-white;
+    color: $white-color;
     line-height: 26px;
     text-align: center;
+
+    @include onTablet {
+      width: 380px;
+    }
   }
 }

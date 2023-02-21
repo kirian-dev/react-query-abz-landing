@@ -1,0 +1,19 @@
+.tooltip {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 16px;
+  gap: 10px;
+
+  position: absolute;
+  width: 276px;
+  height: 32px;
+  left: 80px;
+  top: 6111px;
+
+  /* Black 87 */
+
+  background: rgba(0, 0, 0, 0.87);
+  border-radius: 4px;
+}

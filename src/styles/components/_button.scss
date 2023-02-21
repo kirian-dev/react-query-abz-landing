@@ -2,13 +2,13 @@
   background-color: $primary-color;
   border: none;
   border-radius: $button-border-radius;
-  width: $button-width;
+  min-width: $button-width;
   height: $button-height;
-
+  padding: 4px 19px;
   font-size: 16px;
   line-height: 1.62;
 
-  color: $color-black;
+  color: $black-color;
   text-decoration: none;
 
   transition: background-color 300ms linear 0ms;
@@ -17,26 +17,9 @@
   &:hover {
     background-color: $button-hover-color;
   }
+
+  &:disabled {
+    background-color: $disabled-color;
+    color: #fff;
+  }
 }
-
-// %button-users {
-//   padding: 4px 29px;
-// }
-
-// %button-signup {
-//   padding: 4px 22px 4px 23px;
-// }
-
-// %button-signup-disabled {
-//   padding: 4px 22px 4px 23px;
-//   background-color: $button-disabled-color;
-//   color: $color-white;
-
-//   &:hover {
-//     background-color: $button-disabled-color;
-//   }
-// }
-
-// %button-show-more {
-//   padding: 4px 18px 4px 19px;
-// }

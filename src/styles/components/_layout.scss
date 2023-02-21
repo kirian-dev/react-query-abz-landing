@@ -1,10 +1,11 @@
 .layout {
-  @include flexCenter;
-  flex-direction: column;
-  margin: 0 auto;
-  overflow: hidden;
   width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+
   &__content {
     max-width: $max-width-content;
+    margin: 0 auto;
+    overflow-x: hidden;
   }
 }

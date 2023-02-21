@@ -1,47 +1,47 @@
 import { api } from '@/lib/api';
+import { IPositionsData } from './../../../types/position.interface';
 import { getPositionUrl, getTokenUrl, getUsersUrl } from '@/configs/api.config';
-import { IUser } from './../../../types/user.interface';
+import { IUsersData, IToken, ICreateUser } from './../../../types/user.interface';
 
 export const UserService = {
-  async getUsers(page: string) {
+  async getUsers(page: string): Promise<IUsersData | undefined> {
     try {
-      const users = await api.get(`${getUsersUrl(`?page=${page}&count=6`)}`);
+      const users = await api.get<IUsersData>(`${getUsersUrl(`?page=${page}&count=6`)}`);
 
-      return users;
+      return users.data;
     } catch (error) {
       console.log(error);
     }
   },
-  async createUser(token: string, data: IUser[]) {
+  async createUser(data: ICreateUser) {
     try {
-      const user =
-        (await api.post(`${getUsersUrl('')}`),
-        {
-          headers: {
-            Token: token,
-          },
-          body: {
-            data,
-          },
-        });
+      const token = await this.getToken();
+      if (!token) {
+        return;
+      }
+      const user = await api.post(`${getUsersUrl('')}`, data, {
+        headers: {
+          token: token.token,
+        },
+      });
 
       return user;
     } catch (error) {
       console.log(error);
     }
   },
-  async getToken() {
+  async getToken(): Promise<IToken | undefined> {
     try {
-      const token = await api.get(`${getTokenUrl()}`);
+      const token = await api.get<IToken>(`${getTokenUrl()}`);
 
-      return token;
+      return token.data;
     } catch (error) {
       console.log(error);
     }
   },
-  async getPositions() {
-    const positions = await api.get(`${getPositionUrl()}`);
+  async getPositions(): Promise<IPositionsData | undefined> {
+    const positions = await api.get<IPositionsData>(`${getPositionUrl()}`);
 
-    return positions;
+    return positions.data;
   },
 };

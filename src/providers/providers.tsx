@@ -3,6 +3,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import 'tippy.js/dist/tippy.css';
 
 const ErrorFallback = () => {
   return (

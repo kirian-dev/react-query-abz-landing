@@ -2,9 +2,11 @@
 $primary-color: #f4e041;
 $secondary-color: #00bdd3;
 $background-color: #f8f8f8;
-$color-black: rgba(0, 0, 0, 0.87);
-$color-white: #ffff;
-$color-error: #cb3d40;
+$black-color: rgba(0, 0, 0, 0.87);
+$white-color: #ffff;
+$error-color: #cb3d40;
+$helper-form-color: #7E7E7E;
+$disabled-color: #B4B4B4;
 
 // main-width
 $max-width-content: 1170px;
@@ -25,7 +27,7 @@ $h1-line-height: 40px;
 
 // input
 $input-border-color: #d0cfcf;
-$input-border-color-error: #cb3d40;
+$input-border-error-color: #cb3d40;
 
 // users section
 $base-padding-size-card: 20px;
