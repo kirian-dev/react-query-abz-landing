@@ -9,7 +9,7 @@ interface UploadFileProps {
 }
 
 export const UploadFile: FC<UploadFileProps> = ({ name, accept, error, ...props }) => {
-  const [field, meta] = useField<FileList>({ name, type: 'file' });
+  const [field, meta] = useField<FileList>({ name, type: 'file' }) as any;
   const isError = meta.touched && meta.error;
   const isFile = field.value && field.value.length !== 0;
   return (
