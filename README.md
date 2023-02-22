@@ -25,7 +25,7 @@ This project uses the following technologies:
 To run this project locally, follow these steps:
 
 1.Clone the repository: 
-### `git clone https://github.com/kirian-dev/react-query-abz-landing.git
+### `git clone https://github.com/kirian-dev/react-query-abz-landing.git`
 
 2.Navigate to the project directory:
 ## `react-query-abz-landing`
