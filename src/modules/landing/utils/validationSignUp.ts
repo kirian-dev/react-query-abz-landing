@@ -20,7 +20,7 @@ export const validationSchemaSignUp = yup.object().shape({
     .max(13, 'error phone number length'),
   photo: yup
     .mixed()
-    .required('A file is required')
+    .required('A photo is required')
     .test(
       'fileSize',
       'Photo size should be less than 5 MB',

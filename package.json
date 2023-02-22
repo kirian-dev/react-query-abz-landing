@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tippyjs/react": "^4.2.6",
     "axios": "^1.3.3",
     "formik": "^2.2.9",
     "prettierrc": "0.0.0-5",

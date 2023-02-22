@@ -34,7 +34,6 @@ export const useUsers = () => {
       queryData.refetch();
     },
   });
-
   const {
     data: positions,
     isLoading: isPositionLoading,
@@ -44,8 +43,10 @@ export const useUsers = () => {
     () => ({
       users,
       createUser,
-      isLoading: isLoading || isCreating || isPositionLoading,
-      error: error || createUserError || positionError,
+      isLoading,
+      isCreating,
+      error,
+      createUserError,
       positions,
       handleShowMore,
       showMoreButtonVisible,

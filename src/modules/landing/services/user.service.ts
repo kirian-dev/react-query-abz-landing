@@ -10,25 +10,23 @@ export const UserService = {
 
       return users.data;
     } catch (error) {
-      console.log(error);
+      throw error;
     }
   },
   async createUser(data: ICreateUser) {
-    try {
-      const token = await this.getToken();
-      if (!token) {
-        return;
-      }
-      const user = await api.post(`${getUsersUrl('')}`, data, {
-        headers: {
-          token: token.token,
-        },
-      });
-
-      return user;
-    } catch (error) {
-      console.log(error);
+    const token = await this.getToken();
+    if (!token) {
+      return;
     }
+
+    const user = await api.post(`${getUsersUrl('')}`, data, {
+      headers: {
+        token: token.token,
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+
+    return user.data;
   },
   async getToken(): Promise<IToken | undefined> {
     try {

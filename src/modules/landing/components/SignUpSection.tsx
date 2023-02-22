@@ -16,9 +16,10 @@ import { Button } from '@/components/ui/button/Button';
 import { Loader } from '@/components/ui/loader/Loader';
 import { Heading } from '@/components/ui/heading/Heading';
 import successIcon from '@/assets/images/svg/success-register.svg';
+import { AxiosError } from 'axios';
 
 interface IUsers extends ReturnType<typeof useUsers> {
-  createUserError: string;
+  createUserError: AxiosError<any> | null | undefined;
   isCreating: boolean;
   createUserSuccess: boolean;
 }
@@ -26,6 +27,14 @@ interface IUsers extends ReturnType<typeof useUsers> {
 export const SignUpSection: FC = () => {
   const { isCreating, createUserError, createUser, positions, createUserSuccess } =
     useUsers() as IUsers;
+
+  const errorMessage =
+    createUserError && typeof createUserError !== 'string'
+      ? createUserError.response
+        ? createUserError.response.data.message
+        : createUserError.message
+      : createUserError;
+
   return (
     <section className="signup" id="signup-section">
       <h1 className="signup__title">{USERS_TITLE_POST}</h1>
@@ -47,7 +56,6 @@ export const SignUpSection: FC = () => {
           data.append('email', email);
           data.append('phone', phone);
           data.append('photo', photo);
-
           createUser(data as unknown as ICreateUser);
           resetForm();
           setSubmitting(false);
@@ -125,7 +133,7 @@ export const SignUpSection: FC = () => {
                     }
                   }}
                 />
-                <p className="form__error">{createUserError}</p>
+                {errorMessage && <p className="form__error form__error--pb ">{errorMessage}</p>}
                 <div className="signup__button-container">
                   <Button type="submit" className="signup__button" disabled={!isValid}>
                     {SIGNUP_TEXT}

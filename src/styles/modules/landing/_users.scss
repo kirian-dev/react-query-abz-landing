@@ -48,8 +48,8 @@
 .users-card {
   @include flexCenter;
   flex-direction: column;
+  position: relative;
   padding: $base-padding-size-card;
-
   background-color: $white-color;
   border-radius: 10px;
   &__list {
