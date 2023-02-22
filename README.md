@@ -3,6 +3,9 @@ Hoisting on Github pages
 
 [HERE](https://kirian-dev.github.io/react-query-abz-landing/)
 <p>This repository is a React project that uses various technologies such as React, React Query, TypeScript, Formik, Axios, Vite, and SCSS to build a web application with form functionalities.</p>
+Figma 
+
+[HERE](https://www.figma.com/file/ykJhQGVFGbQBEQZzuktwvm/TESTTASK---2022?node-id=581%3A0)
 
 Technologies
 This project uses the following technologies:
