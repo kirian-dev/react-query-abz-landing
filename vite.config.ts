@@ -14,6 +14,8 @@ export default defineConfig(({ command, mode }) => {
     define: {
       'process.env': env,
     },
+    base: '/react-query-abz-landing/',
+
     plugins: [react(), tsconfigPaths()],
     resolve: {
       alias: {

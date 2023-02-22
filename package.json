@@ -2,7 +2,7 @@
   "name": "abz-landing-react-query",
   "private": true,
   "version": "0.0.0",
-  "homepage" : "http://kirian-dev.github.io/react-query-abz-landing",
+  "homepage": "http://kirian-dev.github.io/react-query-abz-landing",
   "type": "module",
   "scripts": {
     "dev": "vite",
