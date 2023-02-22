@@ -1,7 +1,7 @@
 <h1>ABZ landing</h1>
-Hoisting on Github pages
+Hoisting on Netlify
 
-[HERE](https://kirian-dev.github.io/react-query-abz-landing/)
+[HERE](https://fluffy-naiad-2332cc.netlify.app/)
 <p>This repository is a React project that uses various technologies such as React, React Query, TypeScript, Formik, Axios, Vite, and SCSS to build a web application with form functionalities.</p>
 Figma 
 
